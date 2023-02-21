@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+   <head>
+      <script>
+         function isPalindrome()
+         {
+             var tmp=0, x, nbr, y;
+       
+             nbr = Number(document.getElementById("MyInput").value);
+       
+             y = nbr;
+             while(nbr > 0)
+             {
+               //Comparer le premier chiffre avec le dernier chiffre
+               x = nbr%10;
+               nbr = parseInt(nbr/10);
+               tmp = tmp*10+x;
+             }
+             //Vérifiez si tmp et y sont identiques ou non.
+             if(tmp == y)
+             {
+                alert("Le nombre est un palindrome.");
+             }
+             else
+             {
+                alert("Le nombre n'est pas un palindrome.");
+             }
+         }
+      </script>
+   </head>
+   <body>
+      Entrez un nombre: <input id="MyInput">
+      <button onclick="isPalindrome()">Vérifier</button>
+   </body>
+</html>
